@@ -16,3 +16,17 @@ jobs:
       run: uv sync --no-dev
     - name: Run Tests
       run: uv run pytest
+
+  lint_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+    - name: Set Up Uv
+      uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
+      with:
+        python-version: 3.14
+    - name: Install Linting Tools
+      run: uv sync --dev-only
+    - name: Run Linting
+      run: uv run flake8 main.py tests/
