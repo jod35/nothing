@@ -16,7 +16,7 @@ jobs:
     - name: Install Linting Tools
       run: uv sync --dev
     - name: Run Linting
-      run: uv run flake8 main.py tests/
+      run: uv run ruff check .
 
   test_job:
     runs-on: ubuntu-latest
