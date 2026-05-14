@@ -1,0 +1,17 @@
+
+# this is the display name for the workflow on Github
+name: Run Tests
+on: [push] # define the event(s) that trigger the workflow 
+jobs:
+  run-tests: # the name of the job
+    runs-on: ubuntu-latest # the runner environment for the job
+    steps: # group of steps to be executed in the job
+      - uses: actions/checkout@v2 # step to check out the repository code
+      - name: astral-sh/setup-uv
+      - uses: astral-sh/setup-uv@v8.1.0
+        with:
+          python-version: 3.14
+      - name: Install dependencies
+        run: uv sync --no-dev
+      - name: Run tests
+        run: uv run pytest    
