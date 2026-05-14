@@ -8,7 +8,7 @@ jobs:
     steps: # group of steps to be executed in the job
       - uses: actions/checkout@v2 # step to check out the repository code
       - name: astral-sh/setup-uv
-      - uses: astral-sh/setup-uv@v8.1.0
+        uses: astral-sh/setup-uv@v8.1.0
         with:
           python-version: 3.14
       - name: Install dependencies
