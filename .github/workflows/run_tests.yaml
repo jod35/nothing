@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Set Up Uv
-      uses: astral-sh/setup-uv
+      uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
       with:
         python-version: 3.14
     - name: Install Dependencies
