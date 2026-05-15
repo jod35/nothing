@@ -13,4 +13,6 @@ jobs:
         with:
           python-version: 3.14
       - run: uv sync --no-dev
+      - run: uv run ruff check .
+      
             
