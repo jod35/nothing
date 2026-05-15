@@ -19,6 +19,8 @@ jobs:
     needs:
       - lint-job
     steps:
+      - name: Set Up UV
+        uses: astral-sh/setup-uv@v8.1.0
       - name: Run Tests
         run: uv run pytest
   
